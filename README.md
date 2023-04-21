@@ -1,10 +1,10 @@
-# Extension-Videoview
-Native Video Support For Android in Haxe Flixel using Java VideoView
+# extension-videoview
+Native Video Support For Android in Haxeflixel using Java VideoView
 
 ## Credits:
-- <a href = "https://github.com/jigsaw-4277821">Saw (M.A. Jigsaw) me! </a>  - doing the hole code for the extension
+- <a href = "https://github.com/MAJigsaw77">Mihai Alexandru (M.A. Jigsaw)</a>  - doing the hole code for the extension
 
-## If You want to use it credit me, thank you
+## If You want to use it credit him.
 
 ## A code Exemple to be able to use it
 
@@ -33,5 +33,3 @@ class VideoPlayer extends FlxBasic {
 ```
 
 ## just a little good thing you need to know this extension can run videos from the web browser too :)
-
-## TODO: more Functions for the videoview extension
