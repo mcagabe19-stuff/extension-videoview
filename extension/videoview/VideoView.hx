@@ -1,11 +1,13 @@
 package extension.videoview;
 
-#if android
-import lime.system.JNI;
+#if !android
+#error 'extension-videoview supports only in Android platform.'
 #end
 
+import lime.system.JNI;
+
 /**
- * author: Saw (M.A. Jigsaw)
+ * author: Mihai Alexandru (MAJigsaw77)
  */
 	
 class VideoView
@@ -15,30 +17,24 @@ class VideoView
 
 	public static function playVideo(path:String = null):Void 
 	{
-		#if android
 		var _callbackFunc = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "setCallback", "(Lorg/haxe/lime/HaxeObject;)V");
 		var _playVideo = JNI.createStaticMethod("extensions/videoview/VideoViewExtension", "playVideo", "(Ljava/lang/String;)V");
 
 		_callbackFunc(new CallBack());
 		_playVideo(path);
-		#end
 	}
 }
 
 class CallBack {
-	public function new() {
-
-	}
+	public function new() {}
 
 	public function onCompletion() {
-		if (VideoView.onCompletion != null) {
+		if (VideoView.onCompletion != null)
 			VideoView.onCompletion();
-		}
 	}
 
 	public function onPrepared() {
-		if (VideoView.onPrepared != null) {
+		if (VideoView.onPrepared != null)
 			VideoView.onPrepared();
-		}
 	}
 }
