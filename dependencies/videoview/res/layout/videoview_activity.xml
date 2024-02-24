@@ -8,6 +8,6 @@
     <VideoView
         android:id="@+id/simpleVideoView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-        android:gravity="center"
+        android:layout_height="match_parent"
+        android:gravity="center" />
 </LinearLayout>
