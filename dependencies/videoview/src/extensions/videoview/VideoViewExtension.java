@@ -11,12 +11,16 @@ public class VideoViewExtension extends Extension {
 	public static HaxeObject callback;
 
 	public static void playVideo(String videoPath) {
-		try {
+		try
+		{
 			Intent intent = new Intent(mainActivity, VideoViewActivity.class);
 			intent.putExtra(EXTRA_VIDEOPATH, videoPath);
 			mainActivity.startActivity(intent);
-		} catch (Exception e)
+		}
+		catch (Exception e)
+		{
 			Log.d("VideoViewExtension", e.toString());
+		}
 	}
 
 	public static void setCallback(final HaxeObject _callback)
