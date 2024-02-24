@@ -35,22 +35,25 @@ public class VideoViewActivity extends Activity {
 	@Override
 	protected void onResume(){
 		super.onResume();
-		if (videoView != null)
+		if (videoView != null) {
 			videoView.resume();
+		}
 	}
 
 	@Override
 	protected void onPause(){
 		super.onPause();
-		if (videoView != null && videoView.isPlaying())
+		if (videoView != null && videoView.isPlaying()) {
 			videoView.pause();
+		}
 	}
 
 	@Override
 	protected void onDestroy(){
 		super.onDestroy();
-		if (videoView != null) 
+		if (videoView != null) {
 			videoView.stopPlayback();
+		}
 	}
 
 	@Override
@@ -60,14 +63,14 @@ public class VideoViewActivity extends Activity {
 		videoView.setVideoURI(Uri.parse(videoPath));
 		videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 			@Override
-			public void onCompletion(MediaPlayer mp) {
+			public void onCompletion(MediaPlayer mp) { 
 				callback.call("onCompletion", new Object[] {});
 				finish();
 			}
 		});
 		videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 			@Override
-			public void onPrepared(MediaPlayer mp) {
+			public void onPrepared(MediaPlayer mp) { 
 				callback.call("onPrepared", new Object[] {});
 			}
 		});
@@ -77,8 +80,9 @@ public class VideoViewActivity extends Activity {
 	@Override
 	protected void onStop(){
 		super.onStop();
-		if (videoView != null)
+		if (videoView != null) {
 			videoView.stopPlayback();
+		}
 	}
 
 	@Override
@@ -89,8 +93,9 @@ public class VideoViewActivity extends Activity {
 
 	@Override
 	public void finish(){
-		if (videoView != null)
+		if (videoView != null) {
 			videoView.stopPlayback();
+		}
 		super.finish();
 	}
 }
